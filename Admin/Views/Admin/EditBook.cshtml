@@ -1,0 +1,119 @@
+﻿@{
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+
+}
+@model Admin.Models.Sach
+   
+<div class="right_col" role="main" style="min-height: 3753px;">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <a href="~/Admin/GellAllBook">Back</a>
+                <div class="x_title"  >
+                    <h2 >Cập nhật SÁCH</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="#">Settings 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Settings 2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <br>
+
+                    @using (Html.BeginForm("EditBook", "Admin", FormMethod.Post, new { @class = "form-horizontal form-label-left" }))
+                    {
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="BookID">
+                                Mã Sách <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextBoxFor(m => m.MaSach, new { @class = "form-control  col-md-7 col-xs-12" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="BookName">
+                                Tên sách<span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextBoxFor(m => m.TenSach, new { @class = "form-control  col-md-7 col-xs-12" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="BookPrice">
+                                Giá Bán <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextBoxFor(m => m.GiaBan, new { @class = "form-control  col-md-7 col-xs-12" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="BookDecription">
+                                Mô tả <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextBoxFor(m => m.MoTa, new { @class = "form-control  col-md-7 col-xs-12" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="BookImage">
+                                Ảnh bìa<span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextBoxFor(m => m.AnhBia, new { @class = "form-control  col-md-7 col-xs-12" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="BookDate">
+                                Ngày cập nhật<span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextBoxFor(m => m.NgayCapNhat, new { @class = "form-control  col-md-7 col-xs-12" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="BookAmount">
+                                Số lượng tồn<span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextBoxFor(m => m.SoLuongTon, new { @class = "form-control  col-md-7 col-xs-12" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="BookWhere">
+                                nhà xuất bản<span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextBoxFor(m => m.MaNxb, new { @class = "form-control  col-md-7 col-xs-12" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="BookInfor">
+                                Chủ đề<span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                @Html.TextBoxFor(m => m.MaChuDe, new { @class = "form-control  col-md-7 col-xs-12" })
+                            </div>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <button class="btn btn-primary">Submit</button>
+
+                        </div>
+                    }
